@@ -5,10 +5,15 @@ Spring Boot 기반의 간단한 블로그 웹 애플리케이션입니다.
 
 **GitHub:** https://github.com/7zd6cs62gk-beep/chan78
 
+**GitHub Pages 블로그 (이력·포트폴리오):** https://7zd6cs62gk-beep.github.io/chan78/
+
+> Pages 미설정 시: 저장소 **Settings → Pages → Branch: main, Folder: /docs** ([가이드](docs/GITHUB_PAGES.md))
+
 ---
 
 ## 목차
 
+- [GitHub Pages 블로그](#github-pages-블로그)
 - [주요 기능](#주요-기능)
 - [기술 스택](#기술-스택)
 - [프로젝트 구조](#프로젝트-구조)
@@ -20,6 +25,34 @@ Spring Boot 기반의 간단한 블로그 웹 애플리케이션입니다.
 - [보안](#보안)
 - [GitHub 연동](#github-연동)
 - [문제 해결](#문제-해결)
+
+---
+
+## GitHub Pages 블로그
+
+`docs/` 폴더에 **정적 포트폴리오·이력 블로그**가 포함되어 있습니다.
+
+| 페이지 | 설명 |
+|--------|------|
+| `/chan78/` | 프로필, 기술 스택, 최근 글 |
+| `/chan78/resume.html` | 경력 · 학력 · 자격증 타임라인 |
+
+### 이력 수정
+
+GitHub에서 [`docs/resume.json`](docs/resume.json) 을 편집합니다.
+
+```json
+"experience": [
+  {
+    "period": "2025.01 – 현재",
+    "role": "백엔드 개발",
+    "company": "회사명",
+    "description": "담당 업무 설명"
+  }
+]
+```
+
+`education`, `certificates`, `posts`, `skills`, `profile` 항목도 같은 방식으로 추가·수정할 수 있습니다.
 
 ---
 

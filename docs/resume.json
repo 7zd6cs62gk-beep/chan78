@@ -1,0 +1,60 @@
+{
+  "profile": {
+    "name": "홍길동",
+    "title": "Backend / Full-stack Developer",
+    "email": "your.email@example.com",
+    "location": "Seoul, Korea",
+    "summary": "Spring Boot 기반 웹 애플리케이션 개발 경험이 있습니다. 사용자 인증, CRUD, DB 설계에 관심이 있습니다.",
+    "links": [
+      { "label": "GitHub", "url": "https://github.com/7zd6cs62gk-beep" },
+      { "label": "Spring Blog App", "url": "https://github.com/7zd6cs62gk-beep/chan78" }
+    ]
+  },
+  "skills": [
+    "Java",
+    "Spring Boot",
+    "Spring Security",
+    "JPA / Hibernate",
+    "Thymeleaf",
+    "H2 / MySQL",
+    "HTML / CSS",
+    "Git / GitHub"
+  ],
+  "experience": [
+    {
+      "period": "2024.03 – 현재",
+      "role": "개인 프로젝트",
+      "company": "My Blog (Spring Boot)",
+      "description": "회원가입·로그인·게시글 CRUD 블로그 웹 앱 개발. H2 DB, Spring Security, Thymeleaf 적용."
+    },
+    {
+      "period": "2023.01 – 2023.12",
+      "role": "학습 / 실습",
+      "company": "Java & Spring 입문",
+      "description": "객체지향, REST API, MVC 패턴 학습 및 소규모 토이 프로젝트 수행."
+    }
+  ],
+  "education": [
+    {
+      "period": "20XX.03 – 20XX.02",
+      "school": "OO대학교",
+      "major": "컴퓨터공학과 (예시)",
+      "description": "학사 졸업 (내용을 본인 정보로 수정하세요)"
+    }
+  ],
+  "certificates": [
+    {
+      "period": "2024.06",
+      "name": "자격증 / 수료증 이름 (예시)",
+      "issuer": "발급 기관"
+    }
+  ],
+  "posts": [
+    {
+      "date": "2026-05-24",
+      "title": "Spring Boot 블로그 프로젝트 시작",
+      "summary": "로그인, 회원가입, H2 DB 연동 블로그 앱을 만들었습니다.",
+      "tags": ["Spring Boot", "Side Project"]
+    }
+  ]
+}
