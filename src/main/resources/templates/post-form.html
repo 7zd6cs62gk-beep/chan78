@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${postId != null} ? '글 수정' : '글 작성'">글 작성</title>
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+</head>
+<body>
+<div class="page home-page">
+    <header class="home-header">
+        <div class="brand-inline">
+            <div class="logo small">B</div>
+            <span th:text="${postId != null} ? '글 수정' : '글 작성'">글 작성</span>
+        </div>
+        <a th:href="@{/home}" class="btn-outline">목록으로</a>
+    </header>
+
+    <main class="home-main form-page">
+        <form th:action="${postId != null} ? @{/posts/{id}/edit(id=${postId})} : @{/posts}"
+              th:object="${form}" method="post" class="form">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+
+            <label for="title">제목</label>
+            <input type="text" id="title" th:field="*{title}" placeholder="제목을 입력하세요">
+            <span class="field-error" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>
+
+            <label for="content">내용</label>
+            <textarea id="content" th:field="*{content}" rows="12" placeholder="내용을 입력하세요"></textarea>
+            <span class="field-error" th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></span>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-primary" th:text="${postId != null} ? '수정하기' : '등록하기'">등록하기</button>
+                <a th:href="@{/home}" class="btn-outline">취소</a>
+            </div>
+        </form>
+    </main>
+</div>
+</body>
+</html>

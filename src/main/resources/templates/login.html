@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>블로그 로그인</title>
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+</head>
+<body>
+<div class="page">
+    <div class="card">
+        <div class="brand">
+            <div class="logo">B</div>
+            <h1>My Blog</h1>
+            <p>계정으로 로그인하고 글을 관리하세요.</p>
+        </div>
+
+        <div class="alert alert-error" th:if="${errorMessage}" th:text="${errorMessage}"></div>
+        <div class="alert alert-success" th:if="${logoutMessage}" th:text="${logoutMessage}"></div>
+        <div class="alert alert-success" th:if="${successMessage}" th:text="${successMessage}"></div>
+
+        <form th:action="@{/login}" method="post" class="form">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+
+            <label for="username">아이디</label>
+            <input type="text" id="username" name="username" placeholder="아이디를 입력하세요" required autofocus>
+
+            <label for="password">비밀번호</label>
+            <input type="password" id="password" name="password" placeholder="비밀번호를 입력하세요" required>
+
+            <button type="submit" class="btn-primary">로그인</button>
+        </form>
+
+        <p class="auth-link">
+            계정이 없으신가요? <a th:href="@{/register}">회원가입</a>
+        </p>
+
+        <div class="demo-info">
+            <p>초기 관리자 계정</p>
+            <ul>
+                <li><strong>admin</strong> / admin123</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

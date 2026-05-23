@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${post.title}">게시글</title>
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+</head>
+<body>
+<div class="page home-page">
+    <header class="home-header">
+        <div class="brand-inline">
+            <div class="logo small">B</div>
+            <span>게시글</span>
+        </div>
+        <a th:href="@{/home}" class="btn-outline">목록으로</a>
+    </header>
+
+    <main class="home-main post-detail-page">
+        <h2 th:text="${post.title}">제목</h2>
+        <p class="post-meta">
+            <span th:text="${post.author.username}">author</span>
+            ·
+            <span th:text="${#temporals.format(post.createdAt, 'yyyy-MM-dd HH:mm')}">date</span>
+        </p>
+        <div class="post-content" th:text="${post.content}">content</div>
+
+        <div class="post-actions" th:if="${isAuthor}">
+            <a th:href="@{/posts/{id}/edit(id=${post.id})}" class="btn-outline">수정</a>
+            <form th:action="@{/posts/{id}/delete(id=${post.id})}" method="post" class="inline-form"
+                  onsubmit="return confirm('정말 삭제하시겠습니까?');">
+                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+                <button type="submit" class="btn-danger">삭제</button>
+            </form>
+        </div>
+    </main>
+</div>
+</body>
+</html>
