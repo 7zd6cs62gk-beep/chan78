@@ -1,5 +1,17 @@
+function getBasePath() {
+    const base = document.querySelector('base');
+    if (base && base.href) {
+        return new URL(base.href).pathname;
+    }
+    const path = window.location.pathname;
+    if (path.endsWith('.html')) {
+        return path.substring(0, path.lastIndexOf('/') + 1);
+    }
+    return path.endsWith('/') ? path : path + '/';
+}
+
 async function loadResume() {
-    const res = await fetch('resume.json');
+    const res = await fetch(getBasePath() + 'resume.json');
     if (!res.ok) {
         throw new Error('resume.json을 불러올 수 없습니다.');
     }
