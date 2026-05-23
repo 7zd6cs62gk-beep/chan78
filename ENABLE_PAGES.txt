@@ -1,0 +1,17 @@
+■■ GitHub Pages 404 해결 — 30초 설정 ■■
+
+아래 주소를 브라우저에 붙여넣고 Enter:
+
+https://github.com/7zd6cs62gk-beep/chan78/settings/pages
+
+설정:
+  Source (빌드 소스): Deploy from a branch
+  Branch: gh-pages
+  Folder: / (root)
+
+→ Save 클릭
+
+1~2분 후 접속:
+https://7zd6cs62gk-beep.github.io/chan78/
+
+(gh-pages 안 되면 Branch를 main, Folder를 / (root) 로 바꿔 Save)
